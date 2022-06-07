@@ -109,12 +109,13 @@ public class Editor {
 		if (fin > this.editor.size())
 			throw new IllegalArgumentException("La línea fin no puede ser mayor que el máximo de líneas");
 		int apariciones = 0;
-		if (this.editor.size() > 0) {
+			if (this.editor.size() > 0) {
 			while (inicio < fin) {
 				this.lista = this.editor.getAtPos(inicio);
 				int pos = 1;
 				while (pos <= this.lista.size()) {
 					String cadena = this.lista.getAtPos(pos);
+					cadena.replaceAll("\\P{Print}","");
 					if (cadena.equals(palabra)) {
 						apariciones++;
 					}
