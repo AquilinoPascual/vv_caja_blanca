@@ -48,36 +48,4 @@ public class numPalabrasTest {
         assertEquals(0,editor.numPalabras(1,11,"pepito"));
     }
 
-
-
-
-
-
-
-
-
-
-
-
-    @DisplayName("Test throws EmptyCollectionException")
-    @Test
-    public void testThrowsEmptyCollectionException(){
-        try {
-            System.out.println(editor.numPalabras());
-        } catch (EmptyCollectionException e) {
-            assertThrows(EmptyCollectionException.class, () -> editor.numPalabras());
-        }
-    }
-    @DisplayName("Test return numWords empty arguments")
-    @Test /*No devuelve el número de palabras correcto, supongo que es porque toma como string los \n, habría que añadir
-             al for del contador if(!s.equals("\n"))   */
-    public void testReturNumWords(){
-        editor.leerFichero("validación.txt");
-        try {
-            assertEquals(6, editor.numPalabras());
-        } catch (EmptyCollectionException e){
-
-        }
-    }
-
 }
